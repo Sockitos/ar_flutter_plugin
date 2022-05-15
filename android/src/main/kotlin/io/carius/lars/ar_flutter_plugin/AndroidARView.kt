@@ -54,7 +54,7 @@ import com.google.ar.core.TrackingState
 
 internal class AndroidARView(
         val activity: Activity,
-        context: Context,
+        context: Context?,
         messenger: BinaryMessenger,
         id: Int,
         creationParams: Map<String?, Any?>?
