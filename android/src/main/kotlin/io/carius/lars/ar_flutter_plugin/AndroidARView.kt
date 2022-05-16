@@ -112,7 +112,7 @@ internal class AndroidARView(
                                 Log.d(TAG, "PIXELCOPY DONE")
                                 if (copyResult == PixelCopy.SUCCESS) {
                                     try {
-                                        val mainHandler = Handler(context.mainLooper)
+                                        val mainHandler = Handler(context!!.mainLooper)
                                         val runnable = Runnable {
                                             val stream = ByteArrayOutputStream()
                                             bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream)
@@ -288,11 +288,11 @@ internal class AndroidARView(
     init {
 
         Log.d(TAG, "Initializing AndroidARView")
-        viewContext = context
+        viewContext = context!!
 
         arSceneView = ArSceneView(context)
 
-        setupLifeCycle(context)
+        setupLifeCycle(context!!)
 
         sessionManagerChannel.setMethodCallHandler(onSessionMethodCall)
         objectManagerChannel.setMethodCallHandler(onObjectMethodCall)
